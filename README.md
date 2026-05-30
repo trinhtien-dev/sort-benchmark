@@ -28,11 +28,11 @@
 * **Đối với Radix Sort:** Là test case đánh giá tính chính xác thao tác xử lý số âm bằng phép đảo bit dấu giúp kiểm tra thuật toán có phát sinh lỗi logic hoặc lỗi tràn số.
 
 **2. Hàm genInt2()**
-* **Ý tưởng:** Tạo mảng có cấu trúc tăng dần rồi giảm dần làm vô hiệu hóa Quick Sort cơ bản, đặc biệt là kỹ thuật chọn chốt median-of-3. Cấu trúc dữ liệu này "đánh lừa" thuật toán, khiến pivot rơi vào giá trị xấu nhất và quá trình phân hoạch bị mất cân bằng làm độ phức tạp thời gian suy biến lên O(n^2), lỗi Stack Overflow hoặc TLE.
+* **Ý tưởng:** Tạo mảng có cấu trúc tăng dần rồi giảm dần làm vô hiệu hóa Quick Sort cơ bản, đặc biệt là kỹ thuật chọn chốt median-of-3. Cấu trúc dữ liệu này "đánh lừa" thuật toán, khiến pivot rơi vào giá trị xấu nhất và quá trình phân hoạch bị mất cân bằng làm độ phức tạp thời gian suy biến lên $O(n^2)$, lỗi Stack Overflow hoặc TLE.
 
 **3. Hàm genInt3()**
 * **Ý tưởng:** Tạo ra test case với dải giá trị giảm dần đi từ số dương sang số âm.
-* **Đối với Insertion Sort:** Là trường hợp xấu của Insertion Sort (thường được gọi ra khi mảng con có kích thước <=15 trong các hàm Intro Sort). Thuật toán phải thực hiện số phép hoán vị tối đa, ép độ phức tạp lên O(n^2).
+* **Đối với Insertion Sort:** Là trường hợp xấu của Insertion Sort (thường được gọi ra khi mảng con có kích thước <=15 trong các hàm Intro Sort). Thuật toán phải thực hiện số phép hoán vị tối đa, ép độ phức tạp lên $O(n^2)$.
 * **Đối với Radix Sort:** Mốc số 0 là hạn chế của thao tác bit. Nếu Radix Sort tách mảng ra xử lý số dương riêng, số âm riêng, thì vị trí của mốc số 0 rất dễ gán sai index mảng dẫn đến việc mất số 0 hoặc đảo lộn thứ tự khi ghép mảng lại.
 
 **4. Hàm genInt4()**
@@ -47,7 +47,7 @@
 
 **1. Hàm genStrlexi1()**
 * **Ý tưởng:** Dữ liệu giảm dần hoàn toàn, chuỗi rất dài và giống nhau ở 96 ký tự đầu.
-* **Với Quick Sort:** Trật tự giảm dần là một trong những trường hợp xấu nhất vì chọn pivot không tốt, mảng sẽ phân chia mất cân bằng, suy biến độ phức tạp thành O(n^2) gây TLE hoặc Stack Overflow.
+* **Với Quick Sort:** Trật tự giảm dần là một trong những trường hợp xấu nhất vì chọn pivot không tốt, mảng sẽ phân chia mất cân bằng, suy biến độ phức tạp thành $O(n^2)$ gây TLE hoặc Stack Overflow.
 * **Với Merge Sort/Quick Sort:** Vì các ký tự giống nhau ở đầu quá dài, mỗi phép so sánh chuỗi không còn là O(1) mà buộc CPU quét qua gần hết chiều dài chuỗi O(L). Điều này làm chi phí so sánh tăng, làm cài đặt thời gian không tối ưu.
 
 **2. Hàm genStrlexi2()**
@@ -62,7 +62,7 @@
 
 **4. Hàm genStrlexi4()**
 * **Ý tưởng:** Tạo ra dải dữ liệu tăng dần gần như hoàn hảo
-* **Với Quick Sort:** Tương tự mảng giảm dần, đây là nhược điểm lớn nhất khiến thuật toán suy biến về O(n^2) nếu chọn phần tử đầu làm pivot.
+* **Với Quick Sort:** Tương tự mảng giảm dần, đây là nhược điểm lớn nhất khiến thuật toán suy biến về $O(n^2)$ nếu chọn phần tử đầu làm pivot.
 * **Với Intro Sort:** Kiểm tra cơ chế tự động chuyển đổi và kiểm tra xem bộ chuyển đổi thuật toán trong Intro Sort có hoạt động đúng thời điểm hay không. Khi phát hiện Quick Sort suy biến, Intro Sort phải tự động chuyển sang Heap Sort để kéo độ phức tạp về O(nlogn), giúp chương trình thoát khỏi lỗi TLE.
 
 **5. Hàm genStrlexi5()**
@@ -107,7 +107,7 @@
 
 ### A. Integer Sort
 
-* **Lần chạy 1:** Chọn Merge Sort vì độ phức tạp thời gian luôn định ở O(nlogn), tránh rủi ro suy biến O(n^2) của Quick Sort hay hiện tượng Cache Miss của Radix Sort. Chấp nhận đánh đổi O(n) bộ nhớ phụ để tối ưu tốc độ và sự ổn định.
+* **Lần chạy 1:** Chọn Merge Sort vì độ phức tạp thời gian luôn định ở O(nlogn), tránh rủi ro suy biến $O(n^2)$ của Quick Sort hay hiện tượng Cache Miss của Radix Sort. Chấp nhận đánh đổi O(n) bộ nhớ phụ để tối ưu tốc độ và sự ổn định.
 * **Lần chạy 2:** Vượt qua giới hạn O(nlogn) bằng cách chuyển sang Radix/Counting Sort để đạt độ phức tạp O(n) cùng với các kỹ thuật:
 * **Tối ưu I/O:** Khắc phục độ trễ của thư viện chuẩn bằng bộ đệm tĩnh 2MB kết hợp `fread()`/`fwrite()`. Tự cài đặt readInt/writeInt để dịch trực tiếp mã ASCII sang số nguyên.
 * **Tối ưu trình biên dịch:** `#pragma GCC optimize("O3,unroll-loops")` dùng để tháo dỡ vòng lặp, giảm độ trễ rẽ nhánh CPU. Dùng `#pragma GCC target("avx2,bmi,bmi2,lzcnt,popcnt")` tận dụng tập lệnh x86 nâng cao (đặc biệt là BMI/BMI2) nhằm tăng tốc các thao tác bit.
