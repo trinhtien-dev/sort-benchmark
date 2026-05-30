@@ -74,7 +74,7 @@
 
 **1. Hàm genStrlenlexi1()**
 * **Ý tưởng:** Test case có cấu trúc giảm dần, chuỗi có cùng độ dài, giống nhau ở ký tự đầu, chỉ khác nhau ở một vài ký tự cuối.
-* **Đối với Quick Sort:** Là trường hợp xấu nhất vì nếu thuật toán chọn pivot là phần tử đầu hoặc cuối mảng thì mỗi lần partition sẽ tạo ra một mảng con có kích thước n - 1 và một mảng rỗng làm độ phức tạp thời gian suy biến thành O(n^2) gây lỗi TLE hoặc Stack Overflow.
+* **Đối với Quick Sort:** Là trường hợp xấu nhất vì nếu thuật toán chọn pivot là phần tử đầu hoặc cuối mảng thì mỗi lần partition sẽ tạo ra một mảng con có kích thước n - 1 và một mảng rỗng làm độ phức tạp thời gian suy biến thành $O(n^2)$ gây lỗi TLE hoặc Stack Overflow.
 * **Đối với Comparator của bài C:** Do phần lớn prefix giống nhau, CPU phải quét gần toàn bộ chiều dài chuỗi mới tìm được ký tự khác nhau ở cuối làm tăng chi phí compare từ gần O(1) lên O(L).
 
 **2. Hàm genStrlenlexi2()**
@@ -84,7 +84,7 @@
 
 **3. Hàm genStrlenlexi3()**
 * **Ý tưởng:** Tạo test case mà tất cả các chuỗi đều giống nhau hoàn toàn.
-* **Đối với Quick Sort:** Cực kỳ nguy hiểm đối với Quick Sort không cài đặt partition 3 chiều vì các phần tử đều bằng pivot nên partition bị mất cân bằng làm thuật toán suy biến về O(n^2) gây TLE hoặc Stack Overflow.
+* **Đối với Quick Sort:** Cực kỳ nguy hiểm đối với Quick Sort không cài đặt partition 3 chiều vì các phần tử đều bằng pivot nên partition bị mất cân bằng làm thuật toán suy biến về $O(n^2)$ gây TLE hoặc Stack Overflow.
 * **Đối với Comparator String:** Comparator phải quét toàn bộ chuỗi mới xác định được hai chuỗi bằng nhau khiến mỗi phép compare có chi phí O(L).
 * **Đối với MSD Radix Sort:** Chuỗi giống nhau, toàn bộ phần tử sẽ liên tục rơi vào cùng một bucket ở mọi mức đệ quy và code không có điều kiện dừng tối ưu, thuật toán sẽ đệ quy sâu đến ký tự cuối gây RE hoặc TLE.
 
@@ -126,7 +126,7 @@
 
 * **Lần chạy 1:** Chọn Quick Sort kết hợp Hoare Partition và Random Pivot.
   * Quick Sort có độ phức tạp trung bình O(nlogn), không cần cấp phát thêm bộ nhớ phụ. Khi sắp xếp chuỗi theo độ dài và thứ tự, nó cho tốc độ tốt vì số lượng phép swap và truy cập bộ nhớ thấp.
-  * Hoare Partition có ít phép swap và giảm số lần ghi dữ liệu vào bộ nhớ. Random Pivot chọn ngẫu nhiên một phần tử làm pivot nhằm hạn chế trường hợp xấu nhất O(n^2) khi input gần như có thứ tự.
+  * Hoare Partition có ít phép swap và giảm số lần ghi dữ liệu vào bộ nhớ. Random Pivot chọn ngẫu nhiên một phần tử làm pivot nhằm hạn chế trường hợp xấu nhất $O(n^2)$ khi input gần như có thứ tự.
   * Hàm so sánh chuỗi được tối ưu vì ưu tiên so sánh độ dài chuỗi và tiến hành so sánh từng ký tự khi hai chuỗi có cùng độ dài làm giảm số phép so sánh ký tự.
 * **Lần chạy 2:** Chọn Introsort (lai giữa Quick Sort, Heap Sort và Insertion Sort) kết hợp với nhiều kỹ thuật tối ưu:
   * Dùng `fread()` để đọc dữ liệu vào buffer lớn và `fwrite()` để ghi kết quả ra output, thay vì dùng cin/cout liên tục. Các hàm đọc số, đọc chuỗi, ghi số và ghi chuỗi được tự cài đặt để giảm overhead của thư viện chuẩn.
