@@ -2,9 +2,9 @@
 * **Môn học:** Cấu trúc dữ liệu và Giải thuật
 * **Thời gian học:** Thứ 6 (12h40 - 16h10)
 * **Họ và tên, MSSV thành viên:**
-  * Trịnh Văn Tiến - 25120447
-  * Phạm Đức Toàn - 25120449
-  * Mạc Chí Thiện – 25120440
+ * Trịnh Văn Tiến - 25120447
+ * Phạm Đức Toàn - 25120449
+ * Mạc Chí Thiện – 25120440
 
 ---
 
