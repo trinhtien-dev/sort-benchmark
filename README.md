@@ -1,6 +1,6 @@
 ## I. Thông tin nhóm
 * **Môn học:** Cấu trúc dữ liệu và Giải thuật
-* **Thời gian học:** Thứ 6 (12h40 - 16h10)
+* **Thời gian học:** Học kì 2, 3/2026 -> 6/2026
 * **Họ và tên, MSSV thành viên:**
   * Trịnh Văn Tiến - 25120447
   * Phạm Đức Toàn - 25120449
