@@ -32,7 +32,6 @@
 
 **3. Hàm genInt3()**
 * **Ý tưởng:** Tạo ra test case với dải giá trị giảm dần đi từ số dương sang số âm.
-* **Đối với Insertion Sort:** Là trường hợp xấu của Insertion Sort (thường được gọi ra khi mảng con có kích thước <=15 trong các hàm Intro Sort). Thuật toán phải thực hiện số phép hoán vị tối đa, ép độ phức tạp lên $O(n^2)$.
 * **Đối với Radix Sort:** Mốc số 0 là hạn chế của thao tác bit. Nếu Radix Sort tách mảng ra xử lý số dương riêng, số âm riêng, thì vị trí của mốc số 0 rất dễ gán sai index mảng dẫn đến việc mất số 0 hoặc đảo lộn thứ tự khi ghép mảng lại.
 
 **4. Hàm genInt4()**
