@@ -40,7 +40,7 @@
 * **Đối với Radix Sort:** Trong thao tác xử lý số âm, với test case như trên buộc code phải ép sang kiểu unsgined int và đảo bit dấu. Nếu code thiếu bước này hoặc xử lý sai thì số âm sẽ phân loại thành số dương cực lớn do tràn số gây ra lỗi WA hoặc RE.
 
 **5. Hàm genInt5()**
-* **Ý tưởng:** Tạo một mảng gần như sắp xếp tăng dần nhưng đặt phần tử lớn nhất ở đầu và nhỏ nhất ở cuối tác động vào Quick Sort. Nếu cài đặt Quick Sort bằng cách luôn chọn phần tử cuối cùng làm pivot. Ở ngay bước đầu tiên, pivot được chọn luôn là min vì vậy sẽ tạo ra hai mảng mất cân bằng. Dẫn đến lỗi TLE hoặc Stack Overflow.
+* **Ý tưởng:** Tạo một mảng gần như sắp xếp giảm dần nhưng đặt phần tử lớn nhất ở đầu, nó tác động vào Quick Sort. Nếu cài đặt Quick Sort bằng cách luôn chọn phần tử cuối cùng làm pivot. Ở ngay bước đầu tiên, pivot được chọn luôn là min vì vậy sẽ tạo ra hai mảng mất cân bằng. Dẫn đến lỗi TLE hoặc Stack Overflow.
 
 ### B. Lexicographic Sort
 
