@@ -24,7 +24,7 @@
 
 **1. Hàm genInt1()**
 * **Ý tưởng:** Tạo mảng đan xen liên tục giữa các giá trị cực đại và cực tiểu của kiểu số nguyên để kiểm tra trực tiếp giới hạn của Quick Sort và Radix Sort.
-* **Đối với Quick Sort:** Sự đan xen dữ liệu liên tục khiến CPU dự đoán sai điều kiện rẽ nhánh trong các vòng lặp phân hoạch, làm hệ thống xóa và nạp lại bộ đệm lệnh dẫn đến lỗi TLE.
+* **Đối với Quick Sort:** Nếu Quick Sort được cài đặt cơ bản mà không sử dụng kỹ thuật 3-way partitioning để xử lý các phần tử trùng lặp, các lệnh gọi đệ quy tiếp theo trên mảng con toàn INT_MAX hoặc INT_MIN sẽ khiến thuật toán suy biến thành $O(n^2)$.
 * **Đối với Radix Sort:** Là test case đánh giá tính chính xác thao tác xử lý số âm bằng phép đảo bit dấu giúp kiểm tra thuật toán có phát sinh lỗi logic hoặc lỗi tràn số.
 
 **2. Hàm genInt2()**
